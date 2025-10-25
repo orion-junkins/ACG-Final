@@ -2,125 +2,38 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Final Project — Orion & Nicola</title>
+  <title>TwentyTwenty Test</title>
 
-  <!-- CSS (load before scripts) -->
+  <!-- Include TwentyTwenty CSS -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twentytwenty/1.0.0/twentytwenty.css" />
-  <link href="./resources/offcanvas.css" rel="stylesheet">
-  <link href="./resources/twentytwenty.css" rel="stylesheet" type="text/css" />
 
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      max-width: 900px;
-      margin: 40px auto;
-      line-height: 1.6;
-      color: #222;
-    }
-    h1, h2 {
-      text-align: center;
-    }
-    img {
-      width: 100%;
-      height: auto;
-      border-radius: 6px;
-    }
-    .twentytwenty-container {
-      margin: 20px 0;
-    }
+    body { font-family: sans-serif; margin: 40px; }
+    .twentytwenty-container { width: 60%; margin: auto; }
   </style>
 </head>
 
-<body style="visibility:hidden">
+<body>
+  <h2>TwentyTwenty test</h2>
 
-<h1>Nicola Studer & Orion Junkins</h1>
-<center>Advanced Computer Graphics Final Project – ETH Zürich Autumn 2024</center>
+  <div class="twentytwenty-container">
+    <img src="assets/blender_WIP.png" alt="Before">
+    <img src="assets/blender.png" alt="After">
+  </div>
 
-<div style="text-align: center; margin: 20px 0;">
-  <a href="index.html" style="display:inline-block;padding:10px 20px;background-color:#222;color:#fff;font-weight:bold;text-decoration:none;border-radius:5px;margin:5px;">Main Project Page</a>
-  <a href="orion.html" style="display:inline-block;padding:10px 20px;background-color:#555;color:#f0f0f0;text-decoration:none;border-radius:5px;margin:5px;">Orion's Features</a>
-  <a href="nicola.html" style="display:inline-block;padding:10px 20px;background-color:#555;color:#f0f0f0;text-decoration:none;border-radius:5px;margin:5px;">Nicola's Features</a>
-</div>
+  <!-- Load scripts in correct order -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.event.move/2.0.0/jquery.event.move.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/twentytwenty/1.0.0/jquery.twentytwenty.min.js"></script>
 
-<h2>Motivational Image</h2>
-<div class="twentytwenty-container">
-  <img src="assets/motivation.jpeg" alt="Motivational Image">
-</div>
-<center>Original Motivational Image (created using ChatGPT)</center>
-
-<h2>Final Render</h2>
-<div class="twentytwenty-container">
-  <img src="assets/orion/oidn/final_denoised.png" alt="Final Render">
-</div>
-<center>“The Train In-Between Time, Space and Disney Universes”</center> 
-
-<p>
-An original 1870s steam engine with a black and white Mickey Mouse arrives after a long journey across time and space to a space hangar in a galaxy far far away…
-</p>
-
-<h2>Modeling Process</h2>
-<p>
-We created a skeleton of our scene in Blender... (content continues)
-</p>
-
-<div class="twentytwenty-container">
-  <img src="assets/blender_WIP.png" alt="Blender WIP">
-</div>
-<center>Structuring our scene</center>
-
-<div class="twentytwenty-container">
-  <img src="assets/blender.png" alt="Blender Early Render">
-</div>
-<center>An early draft render from Blender</center>
-
-<div class="twentytwenty-container">
-  <img src="assets/hangar_final_volumes_guide.png" alt="Star Alignment Guide">
-  <img src="assets/star_alignment.png" alt="Star Alignment">
-</div>
-<center>When the stars align</center>
-
-<hr>
-
-<h2>Resources</h2>
-<p>
-The following assets are used in our final render:
-</p>
-
-| Asset | License |
-|-------|----------|
-| [Textures/Normal Maps](https://freepbr.com/) | [License](https://freepbr.com/about-free-pbr/) |
-| [Railroad Tracks](https://www.cgtrader.com/free-3d-models/architectural/engineering/railroad-9fee9d75-7680-453b-bb49-bca06ea949b9) | [License](https://www.cgtrader.com/pages/terms-and-conditions#royalty-free-license) |
-| [Train](https://www.turbosquid.com/3d-models/narrow-gauge-steam-locomotive-782975) | [License](https://blog.turbosquid.com/turbosquid-3d-model-license/) |
-
-<p>
-For our star map, this work has made use of data from the <a href="https://www.cosmos.esa.int/gaia">ESA Gaia mission</a>.
-</p>
-
-<!-- JS Dependencies (load in this order) -->
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.event.move/2.0.0/jquery.event.move.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/twentytwenty/1.0.0/jquery.twentytwenty.min.js"></script>
-
-<!-- Markdeep (must be after everything else) -->
-<script src="./resources/markdeep.min.js?" charset="utf-8"></script>
-
-<script>
-  // Initialize both Markdeep and TwentyTwenty
-  var markdeepOptions = {
-    onLoad: function() {
+  <script>
+    $(window).on("load", function() {
       $(".twentytwenty-container").twentytwenty({
         default_offset_pct: 0.5,
-        move_slider_on_hover: true,
         no_overlay: true
       });
-    },
-    tocStyle: 'none'
-  };
-
-  window.alreadyProcessedMarkdeep || (document.body.style.visibility = "visible");
-</script>
-
+    });
+  </script>
 </body>
 </html>
